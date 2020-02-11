@@ -1,0 +1,15 @@
+type Owner {
+    id: ID!,
+    name: String!,
+    age: Int,
+    address: String,
+    vehicles(skip:Int, offset:Int): [Vehicle]!,
+}
+
+
+
+input OwnerCreateForm {
+    name: String!,
+    age: Int,
+    address: String!,
+}
