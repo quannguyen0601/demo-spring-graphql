@@ -3,7 +3,7 @@ type Owner {
     name: String!,
     age: Int,
     address: String,
-    vehicles(skip:Int, offset:Int): [Vehicle]!,
+    vehicles: [Vehicle]!,
 }
 
 

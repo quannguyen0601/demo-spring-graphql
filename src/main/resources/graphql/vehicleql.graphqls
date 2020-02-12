@@ -14,7 +14,8 @@ type Query {
 }
 
 type Mutation {
-    createVehicle(type: String!, modelCode: String!, brandName: String, launchDate: String):Vehicle
-    createVehicleWithOwner(type: String!, modelCode: String!, brandName: String, launchDate: String, OwnerId: Int!):Vehicle
-    createOwner( name: String!, age: Int, address: String!):Owner
+    createVehicle(type: String!, modelCode: String!, brandName: String, launchDate: String): Vehicle
+    createVehicleWithOwner(type: String!, modelCode: String!, brandName: String, launchDate: String, OwnerId: ID!): Vehicle
+    createOwner( name: String!, age: Int, address: String!): Owner
+    assignVehicleToOwner(vehicleId: ID!, OwnerId: ID!): Owner
 }

@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -27,6 +28,15 @@ public class Owner {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
     private Set<Vehicle> vehicles;
+
+    public Owner setVehicle(Vehicle vehicle) {
+        if (vehicles == null) {
+            this.vehicles = Collections.EMPTY_SET;
+        }
+        vehicle.setOwner(this);
+        this.vehicles.add(vehicle);
+        return this;
+    }
 
 
 }

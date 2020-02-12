@@ -17,6 +17,7 @@ public class OwnerResolver implements GraphQLResolver<Owner> {
 
     Set<Vehicle> vehicles(Owner owner){
         return service.getVehicles(owner.getId());
+        //return service.getVehicles(owner);
     }
 
     Set<Vehicle> getVehicles(Owner owner){

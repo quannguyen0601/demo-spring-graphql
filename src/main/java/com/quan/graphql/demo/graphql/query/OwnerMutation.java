@@ -20,4 +20,8 @@ public class OwnerMutation implements GraphQLMutationResolver {
                               String address) {
         return service.createOwner(name,age, address);
     }
+
+    public Owner assignVehicleToOwner(final long vehicleId, final long ownerId) {
+        return service.assignVehicleToOwner(vehicleId,ownerId);
+    }
 }
